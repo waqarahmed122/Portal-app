@@ -1,0 +1,95 @@
+<!-- <p>student works!</p> -->
+<!--
+<h2>Student Name</h2>
+<input placeholder="Stuent Info " type="text" #box />
+<select>
+  <option *ngFor="let i of cour">{{ i.courses }}</option>
+</select>
+<select>
+  <option *ngFor="let i of uni">{{ i.university }}</option>
+</select>
+
+<button (click)="getval(box)">Submit</button>
+<br />
+<br />
+
+<table #table border="3" [width]="100">
+  <tr style="color: Primary">
+    <th>University Name</th>
+    <th>Course Name</th>
+    <th>Studenth>
+  </tr>
+
+  <tr *ngFor="let i of users">
+    <td>
+      {{ i.university }}
+    </td>
+    <td *ngFor="let cour of i.courses">{{ cour.courses }}</td>
+  </tr>
+</table> -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col md-8">
+      <h2
+        style="
+          text-align: center;
+          color: burlywood;
+          margin: 2%;
+          font-weight: bold;
+        "
+      >
+        Student
+      </h2>
+      <form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+        <input
+          #myuser
+          type="text"
+          class="form-control"
+          name="student"
+          formControlName="student"
+          [placeholder]="stuname"
+        />
+        <br />
+        <br />
+        <h3>Course</h3>
+        <select #coursel class="border" formControlName="courses">
+          <option *ngFor="let i of course" value="{{ i._id }}">
+            {{ i.courses }}
+          </option>
+        </select>
+        <br />
+        <br />
+        <h3>University</h3>
+        <select
+          #unisel
+          class="border"
+          aria-placeholder="Select University"
+          formControlName="university"
+        >
+          <option *ngFor="let i of university" value="{{ i.university }}">
+            {{ i.university }}
+          </option>
+        </select>
+        <br />
+        <br />
+
+        <button type="submit">Submit</button>
+      </form>
+      <br />
+      <br />
+      <table #table border="3" [width]="100" mt-3>
+        <tr style="color: Primary">
+          <th>Course</th>
+          <th>University</th>
+          <th>Student</th>
+        </tr>
+        <tr *ngFor="let students of users">
+          <td *ngFor="let course of students.courses">{{ course.courses }}</td>
+          <td>{{ students.university }}</td>
+          <td>{{ students.student }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

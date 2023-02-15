@@ -1,0 +1,84 @@
+<!-- <p>university works!</p> -->
+<!-- <h2>Enter University</h2>
+<form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+
+
+<input #box type="text" formControlname="university" />
+<select>
+  <option *ngFor="let i of course" value="{{i._id}}">{{ i.courses }}</option>
+</select>
+
+<button type="submit">Submit</button>
+
+<br />
+<br />
+
+<table #table border="3" [width]="100">
+
+  <tr style="color: Primary">
+    <th>University Name</th>
+    <th>Course Name</th>
+  </tr>
+
+  <tr *ngFor="let i of users">
+    <td>
+      {{ i.university }}
+    </td>
+    <td *ngFor="let cours of i.courses">{{ cours.Courses }}</td>
+  </tr>
+</table> -->
+<!-- <div>
+    <h2> han usman bhai</h2>
+  <input type="radio" name="" id="hello" />
+  <label for="">hello</label>
+
+
+  <input type="radio" name="" id="hi" />
+  <label for="">hi</label>
+</div> -->
+<h2
+        style="
+          text-align: center;
+          color: burlywood;
+          margin: 2%;
+          font-weight: bold;
+        "
+      >
+        University
+      </h2>
+      <form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+        <input
+          #myuser
+          type="text"
+          name="university"
+          class="form-control"
+          formControlName="university"
+          [placeholder]="stuname"
+        />
+        <br />
+        <br />
+        <h3>Course</h3>
+        <select #coursel class="border" formControlName="courses">
+          <option *ngFor="let i of course" value="{{ i._id }}">
+            {{ i.courses }}
+          </option>
+        </select>
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+      <br />
+      <br />
+      <table #table border="3" [width]="100" mt-3>
+        <tr style="color: Primary">
+          <th>Course</th>
+          <th>University</th>
+        </tr>
+        <tr *ngFor="let university of users">
+          <td *ngFor="let course of university.courses">{{ course.courses }}</td>
+          <!-- <td *ngFor="let j of i.course">{{ j.course }}</td> -->
+          <!-- <div *ngFor="let j of i.course">
+          <td>{{j.course}}</td>        </div> -->
+          <td>{{ university.university }}</td>
+        </tr>
+      </table>

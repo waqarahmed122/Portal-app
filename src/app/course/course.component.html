@@ -1,0 +1,46 @@
+<!-- <h2>Write Course</h2>
+<form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+<input type="text" #box formControlName="courses" />
+<button type="submit">Submit</button>
+</form>
+<br />
+<br />
+<table #table border="3" [width]="100">
+  <tr style="color: Primary">
+    <th>Course Name</th>
+  </tr>
+
+  <tr *ngFor="let i of users">
+    <td>
+      {{ i.courses }}
+    </td>
+  </tr>
+</table> -->
+
+<h2 style="text-align: center; color: burlywood; margin: 2%; font-weight: bold">
+  Course
+</h2>
+<br />
+<form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+  <input
+    type="text"
+    #box
+    name="course"
+    [placeholder]="courname"
+    formControlName="courses"
+  />
+  <br />
+  <br />
+  <button type="submit">Submit</button>
+</form>
+<!-- (click)="getval(box)" -->
+<br />
+<br />
+<table #table border="2" mt-3>
+  <tr style="color: Primary">
+    <th>Course Name</th>
+  </tr>
+  <tr *ngFor="let i of users">
+    <td>{{ i.courses }}</td>
+  </tr>
+</table>

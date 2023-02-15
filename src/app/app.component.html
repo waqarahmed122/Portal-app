@@ -1,0 +1,84 @@
+<!-- <nav>
+  <a class="button"
+     routerLink="/Course"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Course
+  </a>
+  <a class="button"
+     routerLink="/university"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    University
+  </a>
+  <a class="button"
+     routerLink="/student"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Student
+  </a>
+</nav> -->
+<style>
+  .button {
+    color: blue;
+    /* background-origin: padding-box; */
+    padding: 10px 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: rgb(44, 15, 15);
+    background-color: #4947d8;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    box-sizing: border-box;
+  }
+</style>
+
+<mat-toolbar color="secondary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>My First Task</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="True" mode="side">
+    <mat-nav-list>
+      <a
+        class="button"
+        mat-list-item
+        routerLink="/Course"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
+        Course
+      </a>
+      <a
+        class="button"
+        mat-list-item
+        routerLink="/university"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
+        University
+      </a>
+      <a
+        class="button"
+        mat-list-item
+        routerLink="/student"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
+        Student
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
